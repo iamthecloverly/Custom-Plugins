@@ -19,6 +19,6 @@ async def ginvite_(message: Message):
     reply_id = reply.message_id if reply else None
     resource = message.input_str
     await message.edit(
-        "<code>{}</code>".format((await runcmd("bash invite.sh " +'"'resource'"'))[0]),
+        "<code>{}</code>".format((await runcmd("bash invite.sh " + '"' + resource + '"'))[0]),
         parse_mode="html",
     )
