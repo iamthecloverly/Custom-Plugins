@@ -211,7 +211,7 @@ class _GDrive:
             if mime_type == G_DRIVE_DIR_MIME_TYPE:
                 link += '/'
                 link = link.replace("usergebot", "")
-            out += f"\n👥 __[Shareable Link]({link})__"
+            out += f"\n👥 __[Shareable no banmtai Link]({link})__"
         return out
 
     def _upload_file(self, file_path: str, parent_id: str) -> str:
