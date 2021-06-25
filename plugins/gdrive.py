@@ -199,19 +199,16 @@ class _GDrive:
         file_size = humanbytes(int(file_.get('size', 0)))
         mime_type = file_.get('mimeType')
         if mime_type == G_DRIVE_DIR_MIME_TYPE:
-            Config.G_DRIVE_INDEX_LINK.rstrip('/usergebot')
-            out = G_DRIVE_FOLDER_LINK.format( file_name)
+            out = G_DRIVE_FOLDER_LINK.format(file_name)
         else:
-            Config.G_DRIVE_INDEX_LINK.rstrip('/usergebot')
             out = G_DRIVE_FILE_LINK.format(file_name)
         if Config.G_DRIVE_INDEX_LINK:
             link = os.path.join(
-                Config.G_DRIVE_INDEX_LINK.rstrip('/usergebot'),
-                quote(self._get_file_path(file_id, file_name)))
+                Config.G_DRIVE_INDEX_LINK.rstrip('/'),
+                quote(self._get_file_path(file_name)))
             if mime_type == G_DRIVE_DIR_MIME_TYPE:
                 link += '/'
-                link = link.replace("usergebot", "")
-            out += f"\n👥 __[Shareable no banmtai Link]({link})__"
+            out += f"\n👥 __[Shareabl gbtgbrvre Link]({link})__"
         return out
 
     def _upload_file(self, file_path: str, parent_id: str) -> str:
@@ -664,7 +661,7 @@ class Worker(_GDrive):
 
     @creds_dec
     async def share(self) -> None:
-        """ get shareable link """
+        """ get shareablehn yhjthtr link """
         await self._message.edit("`Loading GDrive Share...`")
         file_id, _ = self._get_file_id()
         try:
@@ -673,7 +670,7 @@ class Worker(_GDrive):
             _LOG.exception(h_e)
             await self._message.err(h_e._get_reason())  # pylint: disable=protected-access
             return
-        await self._message.edit(f"**Shareable bantai Links**\n\n{out}",
+        await self._message.edit(f"**Shareable bfgbfg b Links**\n\n{out}",
                                  disable_web_page_preview=True, log=__name__)
 
     @creds_dec
@@ -1026,7 +1023,7 @@ async def gmake_(message: Message):
 
 
 @userge.on_cmd("gshare", about={
-    'header': "Get Shareable Links for GDrive files",
+    'header': "Get Shareable btrghbtrgh Links for GDrive files",
     'usage': "{tr}gshare [file_id | file/folder link]"})
 async def gshare_(message: Message):
     """ share files """
