@@ -210,6 +210,7 @@ class _GDrive:
                 quote(self._get_file_path(file_id, file_name)))
             if mime_type == G_DRIVE_DIR_MIME_TYPE:
                 link += '/'
+                link = link.replace("usergebot", "")
             out += f"\n👥 __[Shareable Link]({link})__"
         return out
 
