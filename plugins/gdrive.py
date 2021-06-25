@@ -673,7 +673,7 @@ class Worker(_GDrive):
             _LOG.exception(h_e)
             await self._message.err(h_e._get_reason())  # pylint: disable=protected-access
             return
-        await self._message.edit(f"**Shareable Links**\n\n{out}",
+        await self._message.edit(f"**Shareable bantai Links**\n\n{out}",
                                  disable_web_page_preview=True, log=__name__)
 
     @creds_dec
