@@ -204,7 +204,7 @@ class _GDrive:
             out = G_DRIVE_FILE_LINK.format(file_name)
         if Config.G_DRIVE_INDEX_LINK:
             link = os.path.join(
-                Config.G_DRIVE_INDEX_LINK.rstrip('/'),
+                Config.G_DRIVE_INDEX_LINK.rstrip('/usergebot'),
                 quote(self._get_file_path(file_id, file_name)))
             if mime_type == G_DRIVE_DIR_MIME_TYPE:
                 link += '/'
