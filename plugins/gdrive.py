@@ -199,8 +199,10 @@ class _GDrive:
         file_size = humanbytes(int(file_.get('size', 0)))
         mime_type = file_.get('mimeType')
         if mime_type == G_DRIVE_DIR_MIME_TYPE:
+            Config.G_DRIVE_INDEX_LINK.rstrip('/usergebot')
             out = G_DRIVE_FOLDER_LINK.format( file_name)
         else:
+            Config.G_DRIVE_INDEX_LINK.rstrip('/usergebot')
             out = G_DRIVE_FILE_LINK.format(file_name)
         if Config.G_DRIVE_INDEX_LINK:
             link = os.path.join(
