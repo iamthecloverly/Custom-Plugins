@@ -3,24 +3,24 @@
 from userge import userge, Message
 from userge.utils import runcmd
 
-@userge.on_cmd("ginvite", about={
-    'header': "Invite Users To Private GitHub Repo!",
-    'usage': "{tr}ginvite (GitHub-UserName) (GitHub-RepoName)",
-    'examples': "{tr}ginvite boxboi689 xiaomi_ginkgo_dump"})
+@userge.on_cmd("release", about={
+    'header': "Release Files To SourceForge!",
+    'usage': "{tr}release romname devicename romlink (rom-codename)",
+    'examples': "{tr}release generic merlin (link)"})
 async def test_(message: Message):
-    """ Initiate Invite Process """
+    """ Initiate Release Process """
     cmd = message.input_str
     if cmd is None:
         return
-    await message.edit("**Inviting User To Mentioned Private Repo ...**")
+    await message.edit("**Releasing Rom to SourceForge.......**")
     try:
-        out, err, ret, pid = await runcmd("bash invite.sh " + '"' + cmd + '"')
+        out, err, ret, pid = await runcmd("bash release.sh " + '"' + cmd + '"')
     except Exception as t_e:
         await message.err(str(t_e))
         return
     out = out or "no output"
     out = "\n".join(out.split("\n"))
-    output = f"**Invite Status:**\n\n``{out}`` "
+    output = f"**Rom Release Status/Error Message:**\n\n``{out}`` "
     await message.edit_or_send_as_file(text=output,
                                        parse_mode='md',
                                        filename="exec.txt",
