@@ -7,7 +7,7 @@ from userge.utils import runcmd
     'header': "Release Files To SourceForge!",
     'usage': "{tr}release romname devicename romlink (rom-codename)",
     'examples': "{tr}release generic merlin (link)"})
-async def test_(message: Message):
+async def release_(message: Message):
     """ Initiate Release Process """
     cmd = message.input_str
     if cmd is None:
