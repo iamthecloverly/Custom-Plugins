@@ -12,6 +12,12 @@ async def release_(message: Message):
     cmd = message.input_str
     if cmd is None:
         return
+    await message.edit("**Releasing Rom to SourceForge.**")
+    await message.edit("**Releasing Rom to SourceForge..**")
+    await message.edit("**Releasing Rom to SourceForge...**")
+    await message.edit("**Releasing Rom to SourceForge....**")
+    await message.edit("**Releasing Rom to SourceForge.....**")
+    await message.edit("**Releasing Rom to SourceForge......**")
     await message.edit("**Releasing Rom to SourceForge.......**")
     try:
         out, err, ret, pid = await runcmd("bash release.sh " + '"' + cmd + '"')
@@ -20,7 +26,7 @@ async def release_(message: Message):
         return
     out = out or "no output"
     out = "\n".join(out.split("\n"))
-    output = f"**Rom Release Status/Error Message:**\n\n``{out}`` "
+    output = f"**Rom Release Status:**\n(Link Will Be Availaible **Only** After 10Min Cause Sourceforge is Slow\n\n``{out}`` "
     await message.edit_or_send_as_file(text=output,
                                        parse_mode='md',
                                        filename="exec.txt",
