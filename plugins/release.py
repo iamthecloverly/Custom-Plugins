@@ -19,6 +19,8 @@ async def release_(message: Message):
     await message.edit("**Releasing Rom to SourceForge.....**")
     await message.edit("**Releasing Rom to SourceForge......**")
     await message.edit("**Releasing Rom to SourceForge.......**")
+    await message.edit("**Releasing Rom to SourceForge........**")
+    await message.edit("**Releasing Rom to SourceForge.........**")
     try:
         out, err, ret, pid = await runcmd("bash release.sh " + '"' + cmd + '"')
     except Exception as t_e:
