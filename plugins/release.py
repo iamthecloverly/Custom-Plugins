@@ -28,7 +28,7 @@ async def release_(message: Message):
         return
     out = out or "no output"
     out = "\n".join(out.split("\n"))
-    output = f"**Rom Release Status:**\n(Link Will Be Availaible **Only** After 10Min Cause Sourceforge is Slow\n\n``{out}`` "
+    output = f"**Rom Release Status:**\n(Link Will Be Availaible **Only** After 10Min Cause Sourceforge is Slow)\n\n``{out}`` "
     await message.edit_or_send_as_file(text=output,
                                        parse_mode='md',
                                        filename="exec.txt",
