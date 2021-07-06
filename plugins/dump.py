@@ -20,7 +20,7 @@ async def test_(message: Message):
         return
     out = out or "no output"
     out = "\n".join(out.split("\n"))
-    output = f"**Dumps Will Be Pushed On @TheCloverlyDumps**\n\n**Dump Status/Workflow Link:**\n\n``{out}`` "
+    output = f"**Dumps Will Be Pushed On @TheCloverlyDumps**\n\n**Dump Status**\n\n``{out}`` "
     await message.edit_or_send_as_file(text=output,
                                        parse_mode='md',
                                        filename="exec.txt",
